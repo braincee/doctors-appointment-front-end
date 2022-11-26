@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import store from './redux/store';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import AllDoctors from './components/AllDoctors';
+import AllDoctors from './components/Doctors/AllDoctors';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
