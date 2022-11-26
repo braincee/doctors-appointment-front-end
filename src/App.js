@@ -3,22 +3,22 @@ import './App.css';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Component } from 'react';
+import AllDoctors from './components/AllDoctors';
 
+// eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
   render() {
     return (
-    <Provider store={store}>
-    <div className="App">
+      <Provider store={store}>
+        <div className="App">
 
-    </div>
-    </Provider>
+          <AllDoctors />
+        </div>
+      </Provider>
 
-  );
-
-   }
+    );
+  }
 }
 
 export default App;
