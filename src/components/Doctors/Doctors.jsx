@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import Doctor from './Doctor';
 
 // eslint-disable-next-line react/prefer-stateless-function
-class AllDoctors extends Component {
+class Doctors extends Component {
   render() {
+    const { doctors } = this.props;
     return (
       <div>
         <h1 className='display-4 mb-2'>
@@ -15,4 +16,4 @@ class AllDoctors extends Component {
   }
 }
 
-export default AllDoctors;
+export default Doctors;
