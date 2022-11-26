@@ -1,4 +1,4 @@
-import { GET_DOCTORS } from "./types";
+import { ADD_DOCTOR, DELETE_DOCTOR, GET_DOCTORS } from "./types";
 
 const initialState = {
     doctors: [
@@ -27,8 +27,18 @@ export default function(state = initialState, action) {
     switch(action.type) {
         case GET_DOCTORS:
             return {
-                ...state
+                ...state,
             };
+            case ADD_DOCTOR:
+                return {
+                    ...state,
+                    contacts: [action.payload, ...state.contacts]
+                };
+            case DELETE_DOCTOR:
+                return {
+                    ...state,
+                    contacts: state.contacts.filter(contact => contact.id == action.payload)
+                };
             default:
                 return state;
     }
