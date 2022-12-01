@@ -15,11 +15,11 @@ const Login = () => (
           required
         />
         <div className="d-flex">
-          <button type="submit" className="btn btn-warning me-5 fs-5">
+          <button type="submit" className=" button1 btn btn-secondary me-4 fs-4">
             Log in
           </button>
           <NavLink to="/signup">
-            <button type="button" className="btn btn-info me-5 fs-5">Sign Up</button>
+            <button type="button" className="button1 btn btn-secondary me-4 fs-4">Sign Up</button>
           </NavLink>
         </div>
       </form>

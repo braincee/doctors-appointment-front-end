@@ -7,10 +7,10 @@ const SplashScreen = () => (
     <h1 className={`${styles.header} align-items-center`}>Doctors Appointment</h1>
     <div className={`${styles.btncontainer}`}>
       <NavLink to="login">
-        <button type="button" className="btn btn-warning me-5 fs-5">Log in</button>
+        <button type="button" className={`${styles.button1} btn btn-secondary me-5 fs-5`}>Log in</button>
       </NavLink>
       <NavLink to="signup">
-        <button type="button" className="btn btn-info me-5 fs-5">Sign up</button>
+        <button type="button" className={`${styles.button1} btn btn-secondary me-5 fs-5`}>Sign up</button>
       </NavLink>
     </div>
   </div>

@@ -24,7 +24,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #f7ba01b9;
+  background-color: #64636062;
   opacity: 0.7;
 }
 
@@ -38,6 +38,12 @@
 .btncontainer {
   z-index: 1;
   margin: 80px 0 200px;
+}
+
+.button1:hover {
+  color: #000000e5;
+  background-color: #555453b4;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 @media screen and (max-width: 768px) {

@@ -1,4 +1,4 @@
-.login-section {
+.register-section {
   background-image: url("../assets/login.jpg");
   background-size: cover;
   height: 100vh;
@@ -8,7 +8,7 @@
   align-items: center;
 }
 
-.login-container {
+.register-container {
   background-color: #b4b2ae3f;
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(1px);
@@ -16,19 +16,13 @@
   border-radius: 10px;
 }
 
-.button1:hover {
-  color: #000000e5;
-  background-color: #555453b4;
-  font-family: 'Times New Roman', Times, serif;
-}
-
-.login-title {
+.register-title {
   text-align: center;
   color: rgba(129, 124, 116, 0.986);
   margin-bottom: 40px;
 }
 
-.login-form {
+.register-form {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -41,4 +35,10 @@ form input {
   padding: 10px;
   border: 1px hidden;
   border-radius: 5px;
+}
+
+.button1:hover {
+  color: #000000e5;
+  background-color: #555453b4;
+  font-family: 'Times New Roman', Times, serif;
 }

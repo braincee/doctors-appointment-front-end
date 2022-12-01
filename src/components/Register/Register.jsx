@@ -1,40 +1,42 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from './Register.module.css';
+import './register.css';
 
 const Register = () => (
-  <div className={`${styles.background} container-fluid w-50 mx-auto mt-5`}>
-    <h2 className={`${styles.header} h2 mt-5 mb-3 text-center`}>Sign Up</h2>
-    <form>
-      <div className="form-floating mb-3">
+  <section className="register-section">
+    <div className="register-container">
+      <h2 className="register-title">Sign Up</h2>
+      <form className="register-form">
         <input
-          type="email"
-          className="form-control"
-          id="email"
-          placeholder="Email"
+          type="text"
+          name="email"
+          placeholder="Email Address"
           required
         />
-        <label htmlFor="email">Email</label>
-      </div>
-      <div className="form-floating mb-3">
         <input
           type="text"
           className="form-control"
-          id="username"
-          placeholder="Username"
+          id="Name"
+          placeholder="Name"
           required
         />
-        <label htmlFor="username">Username</label>
-      </div>
-      <div className="d-flex justify-content-around">
-        <button type="submit" className="btn btn-success">
-          Sign Up
-        </button>
-        <NavLink to="/login"><button type="button" className="btn btn-info">Log in</button></NavLink>
-      </div>
-    </form>
-  </div>
+        <input
+          type="text"
+          className="form-control"
+          id="Username"
+          placeholder="Name"
+          required
+        />
+        <div className="d-flex">
+          <button type="submit" className="button1 btn btn-secondary me-4 fs-4">
+            Sign Up
+          </button>
+          <NavLink to="/login"><button type="button" className="button1 btn btn-secondary me-4 fs-4">Log in</button></NavLink>
+        </div>
+      </form>
+    </div>
+  </section>
 );
 
 export default Register;
