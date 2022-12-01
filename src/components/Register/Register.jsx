@@ -1,10 +1,11 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import styles from './Register.module.css';
 
 const Register = () => (
-  <div className="container-fluid w-50 mx-auto mt-5">
-    <h2 className="h2 mt-5 mb-3 text-center">Sign Up</h2>
+  <div className={`${styles.background} container-fluid w-50 mx-auto mt-5`}>
+    <h2 className={`${styles.header} h2 mt-5 mb-3 text-center`}>Sign Up</h2>
     <form>
       <div className="form-floating mb-3">
         <input
