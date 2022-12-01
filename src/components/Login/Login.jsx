@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 const Login = () => (
   <div className="container-fluid w-50 mx-auto mt-5">
@@ -15,9 +16,14 @@ const Login = () => (
         />
         <label htmlFor="UserName">Username</label>
       </div>
-      <button type="submit" className="btn btn-primary">
-        Log in
-      </button>
+      <div className="d-flex justify-content-around">
+        <button type="submit" className="btn btn-primary">
+          Log in
+        </button>
+        <NavLink to="/signup">
+          <button type="button" className="btn btn-info">Sign Up</button>
+        </NavLink>
+      </div>
     </form>
   </div>
 );
