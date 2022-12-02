@@ -21,9 +21,6 @@ jobs:
           [ -f .babelrc ] || wget https://raw.githubusercontent.com/microverseinc/linters-config/master/react-redux/.babelrc
       - name: ESLint Report
         run: npx eslint .
-  nodechecker:
-    name: node_modules checker
-    runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v2
       - name: Check node_modules existence

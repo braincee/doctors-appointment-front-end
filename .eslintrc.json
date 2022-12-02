@@ -26,4 +26,5 @@
       "linebreak-style": 0
     },
     "ignorePatterns": ["dist/", "build/"]
-}
+  }
+  
