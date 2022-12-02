@@ -1,0 +1,45 @@
+.appointment-section {
+  background-image: url("../assets/login.jpg");
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.appointment-container {
+  background-color: #5555551f;
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(1px);
+  padding: 80px;
+  border-radius: 10px;
+}
+
+.appointment-title {
+  text-align: center;
+  color: rgba(129, 124, 116, 0.993);
+  margin-bottom: 40px;
+}
+
+.appointment-form {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-content: center;
+  align-items: center;
+  gap: 65px;
+  margin-bottom: 5px;
+}
+
+.form-control,
+.select {
+  width: 200px;
+  padding: 7px;
+  border-radius: 10px;
+}
+
+.button1:hover {
+  color: #000000e5;
+  background-color: #555453b4;
+  font-family: 'Times New Roman', Times, serif;
+}
