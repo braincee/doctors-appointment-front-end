@@ -69,7 +69,6 @@ const AppointmentForm = () => {
                 {doctor.name}
               </option>
             ))}
-
           </select>
           <input type="submit" value="Book Appointment" className="button1 btn btn-secondary" />
         </form>

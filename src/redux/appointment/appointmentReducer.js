@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const CREATE_APPOINTMENT = 'doctors-appointment-front-end/appointment/CREATE_APPOINTMENT';
+const CREATE_APPOINTMENT = 'doctors-appointment-front-end/appointments/CREATE_APPOINTMENT';
 export const initialState = {
   fetchedData: '',
   status: '',
