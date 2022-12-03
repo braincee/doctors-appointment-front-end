@@ -20,7 +20,7 @@ const createAppointment = async (city, appointmentTime, doctorID) => {
 };
 
 const userAppointment = (city, appointmentTime, doctorId) => async (dispatch) => {
-  const data = await createAppointment(city, appointmentTime, doctorId);
+  const response = await createAppointment(city, appointmentTime, doctorId);
   dispatch(appointmentAction(response));
 };
 
