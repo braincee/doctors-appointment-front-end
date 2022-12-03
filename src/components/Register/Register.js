@@ -47,7 +47,6 @@ const Register = () => {
   };
 
   return (
-
     <section className="register-section">
       <div className="register-container">
         <h2 className="register-title">Sign Up</h2>
@@ -78,10 +77,8 @@ const Register = () => {
             </button>
             <NavLink to="/login"><button type="button" className="button1 btn btn-secondary me-4 fs-4">Log in</button></NavLink>
           </div>
-          <>
-            <p>{success}</p>
-            <p>{errors}</p>
-          </>
+          <p>{success}</p>
+          <p>{errors}</p>
         </form>
       </div>
     </section>

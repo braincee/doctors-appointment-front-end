@@ -5,6 +5,7 @@ import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Doctors from './components/Doctors/Doctors';
 import Navbar from './components/layouts/Navbar';
+import BookAppointment from './components/Appointments/BookAppointment';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route exact path="/login" element={<Login />} />
         <Route exact path="/signup" element={<Register />} />
         <Route exact path="/doctors" element={<Doctors />} />
+        <Route exact path="/new_appointment" element={<BookAppointment />} />
       </Routes>
     </>
 
