@@ -63,12 +63,12 @@ const BookAppointment = () => {
             required
           />
           <select value={doctorId} onChange={handleChange} name="doctorId" className="select">
-            <option value="">Select your doctor</option>
+            <option value="doctorId">Select your doctor</option>
             {doctors ? doctors.map((doctor) => (
               <option key={doctor.id} value={doctor.id}>
                 {doctor.name}
               </option>
-            )) : 'No Doctors Available'}
+            )) : 'No Doctors available'}
           </select>
           <input type="submit" value="Book Appointment" className="button1 btn btn-secondary" />
         </form>

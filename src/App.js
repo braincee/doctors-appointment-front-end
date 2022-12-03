@@ -4,15 +4,13 @@ import SplashScreen from './components/SplashScreen/SplashScreen';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Doctors from './components/Doctors/Doctors';
-import Navbar from './components/layouts/Navbar';
 import BookAppointment from './components/Appointments/BookAppointment';
+import Navbar from './components/layouts/Navbar';
 
 function App() {
   return (
     <>
-      <div>
-        <Navbar />
-      </div>
+      <Navbar />
       <Routes>
         <Route exact path="/" element={<SplashScreen />} />
         <Route exact path="/login" element={<Login />} />
@@ -21,7 +19,6 @@ function App() {
         <Route exact path="/new_appointment" element={<BookAppointment />} />
       </Routes>
     </>
-
   );
 }
 

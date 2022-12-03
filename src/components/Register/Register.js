@@ -38,7 +38,7 @@ const Register = () => {
     form.reset();
     dispatch(userRegister(name, email));
 
-    if (newState.status === 201) {
+    if (newState.status === 202) {
       setSuccess(newState.fetchedData.message);
       navigate('/login');
     } else {
@@ -49,6 +49,8 @@ const Register = () => {
   return (
     <section className="register-section">
       <div className="register-container">
+        <p>{success}</p>
+        <p>{errors}</p>
         <h2 className="register-title">Sign Up</h2>
         <form onSubmit={handleSubmit} className="register-form">
           <input
@@ -77,8 +79,6 @@ const Register = () => {
             </button>
             <NavLink to="/login"><button type="button" className="button1 btn btn-secondary me-4 fs-4">Log in</button></NavLink>
           </div>
-          <p>{success}</p>
-          <p>{errors}</p>
         </form>
       </div>
     </section>

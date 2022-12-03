@@ -18,7 +18,7 @@ const Navbar = () => (
             className={(navData) => (navData.isActive ? 'active link' : 'link')}
             to="/doctors"
           >
-            All Doctors
+            Doctors
           </NavLink>
         </li>
         <li>
