@@ -9,7 +9,7 @@ export const initialState = {
 export const createAppointment = async (city, appointmentTime, doctorID) => {
   const data = await axios({
     method: 'POST',
-    url: 'http://localhost:3001/api/v1/appointments',
+    url: 'http://localhost:3001/api/v1/appointment/add',
     data: {
       city,
       appointment_time: appointmentTime,
