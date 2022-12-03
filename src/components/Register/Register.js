@@ -38,7 +38,7 @@ const Register = () => {
     form.reset();
     dispatch(userRegister(name, email));
 
-    if (newState.status === 201) {
+    if (newState.status === 200) {
       setSuccess(newState.fetchedData.message);
       navigate('/login');
     } else {
