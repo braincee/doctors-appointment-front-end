@@ -9,7 +9,7 @@
 }
 
 .appointment-container {
-  background-color: #5555551f;
+  background-color: rgba(85, 85, 85, 0.082);
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(1px);
   padding: 80px;
@@ -39,7 +39,7 @@
 }
 
 .button1:hover {
-  color: #000000e5;
-  background-color: #555453b4;
+  color: rgba(0, 0, 0, 0.898);
+  background-color: rgba(85, 84, 83, 0.706);
   font-family: 'Times New Roman', Times, serif;
 }
