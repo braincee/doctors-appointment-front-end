@@ -32,9 +32,9 @@ const Navbar = () => (
         <li>
           <NavLink
             className={(navData) => (navData.isActive ? 'active link' : 'link')}
-            to="/appointments"
+            to="/my_appointments"
           >
-            Appointments
+            My Appointments
           </NavLink>
         </li>
         <li>
