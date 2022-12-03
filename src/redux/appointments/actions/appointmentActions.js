@@ -19,28 +19,27 @@ const createAppointment = async (city, appointmentTime, doctorID) => {
   return response;
 };
 
-export const getAppointments = () => async dispatch =>  {
+export const getAppointments = () => async (dispatch) => {
   const response = await axios.get('http://localhost:3001/ap1/v1/appointments');
-  dispatch ({
+  dispatch({
     type: GET_APPOINTMENTS,
-    payload: response.data
+    payload: response.data,
   });
-}
- 
-export const deleteAppointment = id => async dispatch => {
+};
+
+export const deleteAppointment = (id) => async (dispatch) => {
   try {
     await axios.delete(`${'http://localhost:3001/api/v1/apointment'}/${id}`);
     dispatch({
       type: DELETE_APPOINTMENT,
-      payload: id
+      payload: id,
     });
   } catch (error) {
-    dispatch ({
+    dispatch({
       type: DELETE_APPOINTMENT,
-      payload: id
+      payload: id,
     });
-  };
- 
+  }
 };
 
 const userAppointment = (city, appointmentTime, doctorId) => async (dispatch) => {
