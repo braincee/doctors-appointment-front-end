@@ -21,12 +21,12 @@ export const userRegisterAction = (data) => ({
   payload: data,
 });
 
-export const userRegister = (name, email) => async (dispatch) => {
+export const userRegister = (name, email, id) => async (dispatch) => {
   try {
-    const data = await register(name, email);
+    const data = await register(name, email, id);
     dispatch(userRegisterAction(data));
-  } catch (e) {
-    dispatch(userRegisterAction(e.response));
+  } catch (error) {
+    dispatch(userRegisterAction(error.response));
   }
 };
 

@@ -21,12 +21,12 @@ export const userLoginAction = (data) => ({
   payload: data,
 });
 
-export const userLogin = (name) => async (dispatch) => {
+export const userLogin = (name, id) => async (dispatch) => {
   try {
-    const data = await login(name);
+    const data = await login(name, id);
     dispatch(userLoginAction(data));
-  } catch (e) {
-    dispatch(userLoginAction(e.response));
+  } catch (error) {
+    dispatch(userLoginAction(error.response));
   }
 };
 

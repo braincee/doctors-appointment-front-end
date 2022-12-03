@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { userAppointment } from '../../redux/appointment/appointmentReducer';
+import userAppointment from '../../redux/appointments/actions/appointmentActions';
 import './bookappointment.css';
 
 const BookAppointment = () => {
@@ -69,7 +69,6 @@ const BookAppointment = () => {
                 {doctor.name}
               </option>
             )) : 'No Doctors available'}
-
           </select>
           <input type="submit" value="Book Appointment" className="button1 btn btn-secondary" />
         </form>

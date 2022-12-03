@@ -4,7 +4,7 @@ import SplashScreen from './components/SplashScreen/SplashScreen';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Doctors from './components/Doctors/Doctors';
-import BookAppointment from './components/Appointment/BookAppointment';
+import BookAppointment from './components/Appointments/BookAppointment';
 import Navbar from './components/layouts/Navbar';
 
 function App() {
