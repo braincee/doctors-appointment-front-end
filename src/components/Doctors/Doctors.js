@@ -1,12 +1,12 @@
 import React from 'react';
-import './doctors.css';
 import { Link } from 'react-router-dom';
-import insta from '../images2/insta-icon-home.png';
-import fb from '../images2/fb-icon-home.png';
-import twitter from '../images2/twitter-icon-home.png';
-import doctor1 from '../images2/doctor1.jpg';
-import doctor2 from '../images2/doctor2.jpg';
-import doctor3 from '../images2/doctor3.jpg';
+import insta from '../assets/insta-icon-home.png';
+import fb from '../assets/fb-icon-home.png';
+import twitter from '../assets/twitter-icon-home.png';
+import doctor1 from '../assets/doctor1.jpg';
+import doctor2 from '../assets/doctor2.jpg';
+import doctor3 from '../assets/doctor3.jpg';
+import './doctors.css';
 
 const social = [
   { icon: insta },

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { userAppointment } from '../../redux/appointment/appointmentReducer';
 import './bookappointment.css';
 
-const AppointmentForm = () => {
+const BookAppointment = () => {
   const [city, setCity] = useState('');
   const [appointmenTime, setTime] = useState('');
   const [doctorId, setId] = useState('');
@@ -63,12 +63,12 @@ const AppointmentForm = () => {
             required
           />
           <select value={doctorId} onChange={handleChange} name="doctorId" className="select">
-            <option value="">Select your doctor</option>
-            {doctors.length > 0 && doctors.map((doctor) => (
+            <option value="doctorId">Select your doctor</option>
+            {doctors ? doctors.map((doctor) => (
               <option key={doctor.id} value={doctor.id}>
                 {doctor.name}
               </option>
-            ))}
+            )) : 'No Doctors available'}
 
           </select>
           <input type="submit" value="Book Appointment" className="button1 btn btn-secondary" />
@@ -78,4 +78,4 @@ const AppointmentForm = () => {
   );
 };
 
-export default AppointmentForm;
+export default BookAppointment;
