@@ -3,7 +3,7 @@ import { combineReducers } from 'redux';
 import thunk from 'redux-thunk';
 import loginSessionsReducer from './user/login';
 import registerSessionsReducer from './user/register';
-import appointmentReducer from './appointment/appointmentReducer';
+import appointmentReducer from './appointments/appointmentReducer';
 
 const rootReducer = combineReducers({
   loginSessionsReducer,
