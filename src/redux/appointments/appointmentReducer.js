@@ -10,7 +10,7 @@ const appointmentReducer = (state = initialState, action) => {
     case CREATE_APPOINTMENT:
       return {
         ...state,
-        fetchedData: action.payload.data,
+        fetchedData: action.payload.response,
         status: action.payload.status,
       };
     default:

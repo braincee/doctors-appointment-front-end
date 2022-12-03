@@ -1,27 +1,27 @@
 import axios from 'axios';
 import CREATE_APPOINTMENT from './types';
 
-const appointmentAction = (data) => ({
+const appointmentAction = (response) => ({
   type: CREATE_APPOINTMENT,
-  payload: data,
+  payload: response,
 });
 
 const createAppointment = async (city, appointmentTime, doctorID) => {
-  const data = await axios({
+  const response = await axios({
     method: 'POST',
     url: 'http://localhost:3001/api/v1/appointment/add',
-    data: {
+    response: {
       city,
       appointment_time: appointmentTime,
       doctor_id: doctorID,
     },
   });
-  return data;
+  return response;
 };
 
 const userAppointment = (city, appointmentTime, doctorId) => async (dispatch) => {
   const data = await createAppointment(city, appointmentTime, doctorId);
-  dispatch(appointmentAction(data));
+  dispatch(appointmentAction(response));
 };
 
 export default userAppointment;
