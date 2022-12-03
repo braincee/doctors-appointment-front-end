@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const BASE_URL = 'http://localhost:3001/api/v1';
-const REGISTER_URL = '/user/add';
+const REGISTER_URL = 'user/add';
 const LOGIN_URL = 'user/id';
 
 export const register = async (name, email, id) => {

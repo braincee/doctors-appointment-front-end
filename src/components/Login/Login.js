@@ -37,7 +37,7 @@ const Login = () => {
 
     if (newState.status === 200) {
       setSuccess(newState.fetchedData.message);
-      navigate('/mainpage');
+      navigate('/doctors');
     } else {
       setErrors(newState.fetchedData.error);
     }
