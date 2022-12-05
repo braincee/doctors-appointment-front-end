@@ -1,12 +1,11 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import './main.css';
 
 const Navbar = () => (
   <nav className="navbar">
     <div className="logo-container">
       <Link
-        to="/doctors"
+        to="/"
       >
         <img src="./images/logo.png" className="logo" alt="logo" />
       </Link>
@@ -32,9 +31,9 @@ const Navbar = () => (
         <li>
           <NavLink
             className={(navData) => (navData.isActive ? 'active link' : 'link')}
-            to="/my_appointments"
+            to="/appointments"
           >
-            My Appointments
+            Appointments
           </NavLink>
         </li>
         <li>

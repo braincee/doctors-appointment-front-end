@@ -4,11 +4,13 @@ import thunk from 'redux-thunk';
 import loginSessionsReducer from './user/login';
 import registerSessionsReducer from './user/register';
 import appointmentReducer from './appointments/appointmentReducer';
+import doctorsReducer from './doctorReduce/doctors';
 
 const rootReducer = combineReducers({
   loginSessionsReducer,
   registerSessionsReducer,
   appointmentReducer,
+  doctor: doctorsReducer,
 });
 
 const store = configureStore({
