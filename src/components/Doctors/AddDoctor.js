@@ -5,7 +5,7 @@ const AddDoctor = () => (
   <div className="add-doc-container py-5 d-flex justify-content-center">
     <div className="doc-container-form">
       <div className="form-title">
-        <h2 className="text-center">Add doctor</h2>
+        <h2>Add doctor</h2>
       </div>
 
       <div className="form-container d-flex justify-content-center">
@@ -15,6 +15,11 @@ const AddDoctor = () => (
               <p className="ms-4 mb-1"> Full Name </p>
               <input type="text" name="name" id="doctor-name" className="p-2 form-control rounded-pill" placeholder="Enter your name" required />
 
+            </div>
+
+            <div className="form-group">
+              <p className="ms-4 mb-1">Email </p>
+              <input type="text" name="email" id="doctor-email" className="form-control rounded-pill" placeholder="Enter your email" required />
             </div>
 
             {/* End of row 1 */}
@@ -31,8 +36,32 @@ const AddDoctor = () => (
             </div>
 
             <div className="form-group">
-              <p htmlFor="bill" className="ms-4 mb-1">Fee</p>
-              <input type="number" name="fee" id="doctor-bill" className="form-control rounded-pill" placeholder="Enter your fee" required />
+              <p htmlFor="location" className="ms-4 mb-1">Location</p>
+              <input type="text" name="location" id="doctor-location" className="form-control rounded-pill" placeholder="Enter your location" required />
+
+            </div>
+
+            <div className="form-group">
+              <p htmlFor="bill" className="ms-4 mb-1">Bill</p>
+              <input type="number" name="bill" id="doctor-bill" className="form-control rounded-pill" placeholder="Enter your bill" required />
+
+            </div>
+
+            <div className="form-group ms-4 reserve-radio">
+              <p className="text-start mb-1">Are you reserved? </p>
+              <p className="ms-5 mb-1">
+                <input type="radio" name="reserve-yes" className="rounded-pill input-radio" checked required />
+                Yes
+              </p>
+              <p className="ms-5 mb-1">
+                <input type="radio" name="reserve-no" className="rounded-pill input-radio" required />
+                No
+              </p>
+            </div>
+
+            <div className="form-group">
+              <p htmlFor="description" className="ms-3 mb-1">Description</p>
+              <textarea name="description" id="doctor-description" className="form-control" placeholder="Enter a brief description" required />
 
             </div>
           </div>
