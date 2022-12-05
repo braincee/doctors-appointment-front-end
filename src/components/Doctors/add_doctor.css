@@ -1,0 +1,76 @@
+.doc-container-form {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.form-container {
+  width: 100%;
+}
+
+.form-title h2 {
+  font-family: 'poppins', sans-serif;
+  font-weight: 900;
+}
+
+#doctor-submit {
+  text-align: center;
+  align-self: center;
+  justify-self: center;
+  padding: 13px;
+  width: 40%;
+  background: #617c00;
+  color: white;
+  border: none;
+}
+
+#doctor-submit:hover {
+  background: #97bf0e;
+}
+
+.doc-form {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 1rem;
+}
+
+.form-group {
+  width: 40%;
+}
+
+.form-control {
+  width: 100%;
+  background-color: white;
+}
+
+.reserve-radio {
+  justify-self: start;
+  align-self: flex-start;
+}
+
+textarea {
+  min-height: 10rem;
+  max-height: 10rem;
+}
+
+form {
+  border: 1px solid whitesmoke;
+  box-shadow: rgba(0, 0, 0, 0.25) 0 14px 28px, rgba(0, 0, 0, 0.22) 0 10px 10px;
+}
+
+@media (max-width: 800px) {
+  .doc-container-form {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .form-group {
+    width: 90%;
+  }
+}
