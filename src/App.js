@@ -8,6 +8,7 @@ import BookAppointment from './components/Appointments/BookAppointment';
 import MyAppointments from './components/Appointments/MyAppointments';
 import Navbar from './components/layouts/Navbar';
 import AddDoctor from './components/Doctors/AddDoctor';
+import DeleteDoctor from './components/Doctors/DeleteDoctor';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/signup" element={<Register />} />
         <Route exact path="/doctors" element={<Doctors />} />
         <Route path="/add_doctor" element={<AddDoctor />} />
+        <Route path="/delete_doctor" element={<DeleteDoctor />} />
         <Route exact path="/new_appointment" element={<BookAppointment />} />
         <Route exact path="my_appointments" element={<MyAppointments />} />
       </Routes>
