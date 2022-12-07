@@ -1,7 +1,6 @@
 import { NotificationManager } from 'react-notifications';
 import axios from '../../config/axios';
 // const BASE_URL = 'http://localhost:3000/api/v1/doctors;
-
 const GET_DOCTORS = 'DOCTOR_APPOINTMENT/GET_DOCTORS';
 const CREATE_DOCTOR = 'DOCTOR_APPOINTMENT/CREATE_DOCTOR';
 const DELETE_DOCTOR = 'DOCTOR_APPOINTMENT/DELETE_DOCTOR';
@@ -48,7 +47,7 @@ export const createDoctorAction = (payload) => async (dispatch) => {
     .catch((error) => {
       dispatch(createDoctor(error.response.data));
       NotificationManager.error(
-        'Error while creating new book!',
+        'Error while creating new Doctor!',
         'Error!',
       );
     });
@@ -56,7 +55,7 @@ export const createDoctorAction = (payload) => async (dispatch) => {
 
 export const deleteDoctorAction = (payload) => async (dispatch) => {
   axios
-    .delete(`api/v1doctors/${payload}`)
+    .delete(`api/v1/doctors/${payload}`)
     .then((res) => {
       dispatch(deleteDoctor(res.data));
     });

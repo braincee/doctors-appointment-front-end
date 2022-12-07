@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import './doctors.css';
 import Carousel from 'react-multi-carousel';
@@ -39,29 +40,47 @@ const Doctors = () => {
 
   return (
     <div className="main-doctor-container">
-      <div className="doctors">
-        <h1 className="doctor-header">AVAILABLE DOCTORS</h1>
-        <p className="doctor-header-para"> Please select a doctor</p>
-      </div>
-      <div className="doctors-li">
-        <Carousel
-          responsive={responsive}
-          className="carousel-container"
-          infinite
-        >
-          {doctors.map((doctor) => (
-            <SingleDoctor
-              name={doctor.name}
-              image={doctor.image}
-              speciality={doctor.speciality}
-              city={doctor.location}
-              description={doctor.description}
-              id={doctor.id}
-              key={doctor.id}
-            />
-          ))}
-        </Carousel>
-      </div>
+      {
+        doctors.length === 0
+          ? (
+            <div className="doctors">
+              <h1 className="doctor-header">AVAILABLE DOCTORS</h1>
+              <h2 className="not-found-notice mt-5">No doctors available</h2>
+            </div>
+          )
+
+          : (
+            <>
+              <div className="doctors">
+                <h1 className="doctor-header">AVAILABLE DOCTORS</h1>
+                <p className="doctor-header-para"> Please select a doctor</p>
+              </div>
+              <div className="doctors-li">
+                <Carousel
+                  responsive={responsive}
+                  className="carousel-container"
+                  infinite
+                >
+                  {doctors.map((doctor) => (
+                    <div key={doctor.id}>
+                      <Link to={`/doctor_details/${doctor.id}`}>
+                        <SingleDoctor
+                          name={doctor.name}
+                          image={doctor.image}
+                          speciality={doctor.speciality}
+                          city={doctor.location}
+                          description={doctor.description}
+                        />
+                      </Link>
+                    </div>
+                  ))}
+                </Carousel>
+              </div>
+            </>
+          )
+
+      }
+
     </div>
   );
 };

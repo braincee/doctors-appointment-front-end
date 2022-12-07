@@ -24,7 +24,11 @@
   justify-content: center;
   align-items: center;
   margin-top: 1rem;
-  margin-left: 200px;
+  margin-left: 1rem;
+}
+
+.close-btn-container:hover {
+  background-color: rgba(0, 0, 0, 0.8) !important;
 }
 
 .doctor-data {
@@ -38,6 +42,7 @@
 .social-net img {
   margin-right: 0.8rem;
   width: 2rem;
+  color: rgb(156 163 175/var(--tw-text-opacity));
 }
 
 .doctor-data h4 {
@@ -50,6 +55,11 @@
 .doctor-data p {
   text-align: center;
   margin: 0.7rem 0;
+
+  --tw-text-opacity: 1;
+
+  color: rgb(156 163 175/var(--tw-text-opacity));
+  font-weight: 600;
 }
 
 .single-image {
@@ -58,10 +68,16 @@
 
 .doctor-container {
   width: 100%;
-  padding: 0 10rem;
+  padding: 5rem 10rem 1rem 10rem;
   justify-content: space-between;
   display: flex;
   height: 100%;
+}
+
+.doctor-header-para {
+  font-size: 1.125rem !important;
+  line-height: 1.75rem !important;
+  color: rgb(107 114 128/var(--tw-text-opacity)) !important;
 }
 
 .details {
@@ -69,6 +85,7 @@
 }
 
 .main-doctor-container {
+  padding-top: 65px;
   width: 100%;
 }
 
@@ -121,4 +138,20 @@
   margin: 1rem 2rem 3rem 0;
   cursor: pointer;
   display: block;
+}
+
+@media (max-width: 800px) {
+  .doctor-container {
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 1rem 2rem 1rem 2rem;
+  }
+
+  .single-image {
+    width: 15rem;
+  }
+
+  .detail-name {
+    font-size: 1.2rem !important;
+  }
 }
