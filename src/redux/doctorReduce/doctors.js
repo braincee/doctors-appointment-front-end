@@ -1,6 +1,7 @@
 import { NotificationManager } from 'react-notifications';
 import axios from '../../config/axios';
-// const BASE_URL = 'http://localhost:3000/api/v1/doctors;
+// const BASE_URL = 'http://localhost:3001/api/v1/doctors;
+
 const GET_DOCTORS = 'DOCTOR_APPOINTMENT/GET_DOCTORS';
 const CREATE_DOCTOR = 'DOCTOR_APPOINTMENT/CREATE_DOCTOR';
 const DELETE_DOCTOR = 'DOCTOR_APPOINTMENT/DELETE_DOCTOR';
