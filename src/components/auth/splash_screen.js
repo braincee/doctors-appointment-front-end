@@ -8,7 +8,7 @@ function Splashscreen() {
         <p className="display-3">
           <span className="logo-text-style">Find a doctor</span>
           {' '}
-          and book online
+          <span className="text-primary">online Now</span>
         </p>
       </div>
       <div className="btn-container d-flex flex-column mt-5 pt-5 align-items-center text-center">

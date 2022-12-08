@@ -19,7 +19,7 @@ a:hover {
 } */
 
 .logo-text-style {
-  color: rgb(245, 199, 2);
+  color: rgb(2, 245, 95);
   font-weight: bold;
 }
 
@@ -35,12 +35,12 @@ a:hover {
   color: white;
   width: 50%;
   padding: 0.7rem;
-  background: #617c00;
+  background: #00537c;
   border: none;
 }
 
 .splash-btn:hover {
-  background: #97bf0e;
+  background: #2a454a;
 }
 
 @media (min-width: 768px) {
