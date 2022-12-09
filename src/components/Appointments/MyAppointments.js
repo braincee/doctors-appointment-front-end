@@ -5,8 +5,8 @@ import './appointment.css';
 
 const MyAppointments = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user);
-  const doctors = useSelector((state) => state.doctor);
+  const user = useSelector((state) => state.user.fetchedData);
+  const doctors = useSelector((state) => state.doctors);
   const appointments = useSelector((state) => state.appointment.appointments);
 
   useEffect(() => {
@@ -37,7 +37,7 @@ const MyAppointments = () => {
                     <h4>
                       {' '}
                       {doctors.filter((doctor) => doctor.id === appoint.doctor_id).map(
-                        (doct) => doct.name,
+                        (doctor) => doctor.name,
                       )}
                     </h4>
                     <p>{appoint.city}</p>

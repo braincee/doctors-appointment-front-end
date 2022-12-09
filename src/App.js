@@ -1,4 +1,5 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import SplashScreen from './components/SplashScreen/SplashScreen';
 import Register from './components/Register/Register';
@@ -12,9 +13,10 @@ import DeleteDoctor from './components/Doctors/DeleteDoctor';
 import DoctorDetails from './components/Doctors/DoctorDetails';
 
 function App() {
+  const user = useSelector((state) => state.user);
   return (
     <>
-      <Navbar />
+      { user && user.fetchedData !== null ? <Navbar /> : '' }
       <Routes>
         <Route exact path="/" element={<SplashScreen />} />
         <Route exact path="/login" element={<Login />} />

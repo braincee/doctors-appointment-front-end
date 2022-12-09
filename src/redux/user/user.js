@@ -4,10 +4,9 @@ const BASE_URL = 'http://localhost:3001/api/v1';
 const REGISTER_URL = 'user/add';
 const LOGIN_URL = 'user/name';
 
-
 const persistUser = (user) => {
-   localStorage.setItem('user', user);
-}
+  localStorage.setItem('user', user);
+};
 
 export const register = async (name, email) => {
   const response = await axios({
@@ -31,6 +30,6 @@ export const login = async (name) => {
 };
 
 export const initialState = {
-  fetchedData: '',
+  fetchedData: null,
   status: '',
 };

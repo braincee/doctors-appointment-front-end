@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 // import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import persistStore from 'redux-persist/es/persistStore';
 import { createDoctorAction } from '../../redux/doctorReduce/doctors';
 
 import './add_doctor.css';
@@ -13,7 +12,7 @@ const AddDoctor = () => {
   const [image, setImage] = useState('');
   // const [errors, setErrors] = useState('');
 
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.fetchedData);
 
   const dispatch = useDispatch();
   const doctorsName = document.getElementById('name');
@@ -27,28 +26,24 @@ const AddDoctor = () => {
   // const newState = useSelector((state) => state.doctors);
   // const navigate = useNavigate();
 
-  const getUserId = () => localStorage.getItem('persistStore');
-  console.log(getUserId());
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    
-    const doctorData = new FormData();
-    doctorData.append('doctor[name]', name);
-    doctorData.append('doctor[speciality]', speciality);
-    doctorData.append('doctor[fee]', fee);
-    doctorData.append('doctor[image]', image);
-    //doctorData.append('doctor[user_id]', userId);
-  
+
+    const doctors = {
+      name,
+      speciality,
+      image,
+      fee,
+    };
+
     const { id } = user;
 
-    dispatch(createDoctorAction(doctorData, id));
+    dispatch(createDoctorAction(doctors, id));
     doctorsName.value = '';
     doctorsSpeciality.value = '';
     doctorsBill.value = '';
     doctorsImage.value = '';
   };
-
 
   // useEffect(() => {
   //   if (newState.status === 200) {
@@ -89,13 +84,14 @@ const AddDoctor = () => {
             required
           />
           <input
-            type="file"
+            type="text"
             name="image"
+            value={image}
             id="image"
             className="form-control"
             placeholder="Enter an image url link"
             required
-            onChange={(e) => setImage(e.target.files[0])}
+            onChange={(e) => setImage(e.target.value)}
           />
           <input
             type="number"

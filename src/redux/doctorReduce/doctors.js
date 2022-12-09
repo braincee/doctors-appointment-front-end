@@ -1,5 +1,6 @@
 import { NotificationManager } from 'react-notifications';
-import axios from '../../config/axios';
+// import axios from '../../config/axios';
+import axios from 'axios';
 
 const GET_DOCTORS = 'DOCTOR_APPOINTMENT/GET_DOCTORS';
 const CREATE_DOCTOR = 'DOCTOR_APPOINTMENT/CREATE_DOCTOR';
@@ -34,6 +35,7 @@ export const getDoctorsAction = () => async (dispatch) => {
 };
 
 export const createDoctorAction = (doctor, userId) => async (dispatch) => {
+  console.log(userId);
   axios
     .post(`http://localhost:3001/api/v1/doctors?user_id=${userId}`, doctor)
     .then((res) => {

@@ -20,8 +20,7 @@ const loginSessionsReducer = (state = initialState, action) => {
       };
     case LOGOUT:
       return {
-        ...state,
-        fetchedData: {},
+        fetchedData: null,
         status: '',
       };
 
