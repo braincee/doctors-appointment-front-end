@@ -11,8 +11,7 @@ const MyAppointments = () => {
 
   useEffect(() => {
     dispatch(getAppointments());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [dispatch]);
 
   const handleDelete = (id) => {
     dispatch(deleteAppointment(id));

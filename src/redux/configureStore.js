@@ -5,7 +5,7 @@ import { persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import loginSessionsReducer from './user/login';
 import appointmentReducer from './appointments/appointmentReducer';
-import doctorsReducer from './doctorReduce/doctors';
+import doctorsReducer from './doctorsReducer/doctors';
 
 const persistConfig = {
   key: 'root',
@@ -22,12 +22,7 @@ export const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 const store = configureStore({
   reducer: persistedReducer,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware({
-    serializableCheck: false,
-    immutableCheck: false,
-    thunk,
-  }),
-
+  middleware: [thunk],
 });
 
 export default store;

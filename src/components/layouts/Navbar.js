@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { userLogOutAction } from '../../redux/user/login';
 import './main.css';
-import logo from '../assets/doctor-logo.png';
+import logo from '../../assets/doctor-logo.png';
 
 const Navbar = () => {
   const navigate = useNavigate();

@@ -40,7 +40,7 @@ const Register = () => {
       } else {
         setErrors(newState.fetchedData.errors);
       }
-    }// eslint-disable-next-line react-hooks/exhaustive-deps
+    }
   }, [newState]);
 
   const handleSubmit = (e) => {

@@ -28,15 +28,15 @@ const Login = () => {
   };
 
   useEffect(() => {
-    if (newState.status === 200) {
+    if (newState && newState.status === 200) {
       navigate('/doctors');
-    } else if (newState.status !== 200 && newState.status !== '') {
-      if (newState.fetchedData.error === 401) {
+    } else if (newState && newState.status !== 200 && newState.status !== '') {
+      if (newState.fetchedData && newState.fetchedData.error === 401) {
         setErrors(newState.fetchedData.errors);
       } else {
-        setErrors(newState.fetchedData.errors);
+        setErrors(newState.fetchedData ? newState.fetchedData.errors : '');
       }
-    }// eslint-disable-next-line react-hooks/exhaustive-deps
+    }
   }, [newState]);
 
   const handleSubmit = (e) => {
