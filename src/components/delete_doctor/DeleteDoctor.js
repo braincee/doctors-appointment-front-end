@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useNavigate } from 'react-router-dom';
-// import localStorages from '../../helpers/localStorage';
+import { useNavigate } from 'react-router-dom';
+import localStorages from '../../helpers/localStorage';
 import {
   deleteDoctorAction,
   getDoctorsAction,
@@ -11,11 +11,28 @@ import './delete_doctor.css';
 const DeleteDoctor = () => {
   const doctors = useSelector((state) => state.doctors);
   const [successNotice, setSuccessNotice] = useState(false);
+<<<<<<< HEAD:src/components/Doctors/DeleteDoctor.js
+=======
+  const navigate = useNavigate();
+  const hasAccount = localStorages.getUser();
+  const role = hasAccount.user === undefined ? '' : hasAccount.user.name;
+
+  useEffect(() => {
+    if (role !== 'admin') {
+      navigate('/401');
+    }
+  }, []);
+>>>>>>> a5594249d3572bd618dd2d3c1dae731f1b34070e:src/components/delete_doctor/DeleteDoctor.js
 
   const dispatch = useDispatch();
   const deleteDoctor = (id) => {
     dispatch(deleteDoctorAction(id));
     setSuccessNotice(true);
+<<<<<<< HEAD:src/components/Doctors/DeleteDoctor.js
+=======
+    navigate('/');
+    window.location.reload();
+>>>>>>> a5594249d3572bd618dd2d3c1dae731f1b34070e:src/components/delete_doctor/DeleteDoctor.js
   };
 
   useEffect(() => {

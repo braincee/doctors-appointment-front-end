@@ -5,7 +5,7 @@ import './doctors.css';
 import Carousel from 'react-multi-carousel';
 import SingleDoctor from './SingleDoctor';
 import 'react-multi-carousel/lib/styles.css';
-import { getDoctorsAction } from '../../redux/doctorReduce/doctors';
+import { getDoctorsAction } from '../redux/doctorReduce/doctors';
 
 const Doctors = () => {
   const doctors = useSelector((state) => state.doctors);

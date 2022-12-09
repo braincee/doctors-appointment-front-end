@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import insta from './images2/insta-icon-home.png';
-import fb from './images2/fb-icon-home.png';
-import twitter from './images2/twitter-icon-home.png';
+import insta from '../images2/insta-icon-home.png';
+import fb from '../images2/fb-icon-home.png';
+import twitter from '../images2/twitter-icon-home.png';
 
 const social = [
   { icon: insta },
