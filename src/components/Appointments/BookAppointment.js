@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import userAppointment from '../../redux/appointments/actions/appointmentActions';
 import './bookappointment.css';
 
@@ -8,21 +9,23 @@ const BookAppointment = () => {
   const [appointmenTime, setTime] = useState('');
   const [doctorId, setId] = useState('');
 
-  const doctors = useSelector((state) => state.doctorReducer);
+  const doctors = useSelector((state) => state.doctors);
+  const user = useSelector((state) => state.user);
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const handleChange = (event) => {
     const getTarget = event.target;
-    const inputValue = getTarget.value;
+    const inputvalue = getTarget.value;
     switch (getTarget.name) {
       case 'city':
-        setCity(inputValue);
+        setCity(inputvalue);
         return city;
       case 'appointmenTime':
-        setTime(inputValue);
+        setTime(inputvalue);
         return appointmenTime;
       case 'doctorId':
-        setId(inputValue);
+        setId(inputvalue);
         return doctorId;
       default:
         return 'yes';
@@ -31,16 +34,23 @@ const BookAppointment = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    const appointment = {
+      city,
+      appointment_time: appointmenTime,
+    };
 
-    dispatch(userAppointment(city, appointmenTime, doctorId));
-    event.target.reset();
+    dispatch(userAppointment(appointment, user.id, doctorId));
+    setCity('');
+    setTime('');
+    setId();
+    setTimeout(() => { navigate('/my_appointments'); }, 1000);
   };
 
   return (
-    <section className="appointment-section">
-      <div className="appointment-container">
-        <h3 className="appointment-title">Book an Appointment</h3>
-        <form onSubmit={handleSubmit} className="appointment-form">
+    <section className="appointments-section">
+      <div className="appointments-container">
+        <h3 className="appointments-title">Book an Appointment</h3>
+        <form onSubmit={handleSubmit} className="appointments-form">
           <input
             type="text"
             className="form-control"
@@ -62,9 +72,9 @@ const BookAppointment = () => {
             onChange={handleChange}
             required
           />
-          <select value={doctorId} onChange={handleChange} name="doctorId" className="select">
-            <option value="doctorId">Select your doctor</option>
-            {doctors ? doctors.map((doctor) => (
+          <select id="doctor" value={doctorId} onChange={handleChange} name="doctorId" className="select">
+            <option value="">Select your doctor</option>
+            {doctors.length > 0 ? doctors.map((doctor) => (
               <option key={doctor.id} value={doctor.id}>
                 {doctor.name}
               </option>

@@ -1,55 +1,51 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAppointments, deleteAppointment } from '../../redux/appointments/actions/appointmentActions';
+import './appointment.css';
 
 const MyAppointments = () => {
   const dispatch = useDispatch();
-  const User = useSelector((state) => state.sessionsReducer.fetchedData.user);
-  const appointments = useSelector((state) => state.appointmentReducer.appointments);
-
-  const selfAppoitments = () => {
-    const results = [];
-    if (appointments.length === 0) {
-      appointments.map((appoint) => {
-        if (appoint.user_id === User.id) {
-          results.push(appoint);
-        }
-        return null;
-      });
-    }
-    return results;
-  };
+  const user = useSelector((state) => state.user);
+  const doctors = useSelector((state) => state.doctor);
+  const appointments = useSelector((state) => state.appointment.appointments);
 
   useEffect(() => {
     dispatch(getAppointments());
-    selfAppoitments();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleDelete = (id) => {
     dispatch(deleteAppointment(id));
   };
 
-  const myAppointments = selfAppoitments();
-
   return (
-    <section>
-      <h1>{User.name}</h1>
+    <section className="appointment-container">
       {
-      myAppointments.length === 0 ? (
-        <div>
-          <h2>No Appointments Available</h2>
+      appointments.length === 0 ? (
+        <div className="notice-container">
+          <h2 className="title">MY APPOINTMENTS</h2>
+          <h4 className="notice">No Appointments Available</h4>
         </div>
       ) : (
         <>
-          <ul>
+          <ul className="my-appointments">
+            <li className="title">MY APPOINTMENTS</li>
             {
-              myAppointments.map((appoint) => (
-                <li key={appoint.id}>
-                  <h3>{appoint.city}</h3>
-                  <h3>{appoint.time}</h3>
-                  <button type="button" onClick={() => handleDelete(appoint.id)}>Delete</button>
+              appointments.map((appoint) => (appoint.user_id === user.id ? (
+                <li key={appoint.id} className="appointment">
+                  <div>
+                    <h4>
+                      {' '}
+                      {doctors.filter((doctor) => doctor.id === appoint.doctor_id).map(
+                        (doct) => doct.name,
+                      )}
+                    </h4>
+                    <p>{appoint.city}</p>
+                  </div>
+                  <p>{appoint.appointment_time.substr(0, 10)}</p>
+                  <button type="button" onClick={() => handleDelete(appoint.id)} className="appointment-btn">Cancel</button>
                 </li>
-              ))
+              ) : null))
             }
           </ul>
         </>

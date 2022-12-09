@@ -1,3 +1,4 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 import insta from './images2/insta-icon-home.png';
 import fb from './images2/fb-icon-home.png';
@@ -9,20 +10,22 @@ const social = [
   { icon: twitter },
 ];
 
+const imageUrl = 'http://localhost:3001/api/v1/';
+
 const SingleDoctor = ({
-  name, image, location, description,
+  name, image, city, speciality,
 }) => (
   <div className="doctors1">
     <div className="image-div">
-      <img src={image} alt="Profile of doctor" className="doctors-images" />
+      <img src={`${imageUrl}${image}`} alt="Profile of doctor" className="doctors-images" />
     </div>
     <div className="doctor-data">
       <h4>{name}</h4>
       <p>.........................</p>
       <p>
-        {description}
+        {city}
       </p>
-      <p>{location}</p>
+      <p>{speciality}</p>
       <div className="social-net">
         {social.map((item) => (
           <a href="/" key={item.icon}>
@@ -37,8 +40,8 @@ const SingleDoctor = ({
 SingleDoctor.propTypes = {
   image: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  city: PropTypes.string.isRequired,
+  speciality: PropTypes.string.isRequired,
 };
 
 export default SingleDoctor;

@@ -18,11 +18,13 @@ const appointmentReducer = (state = initialState, action) => {
       return {
         ...state,
         appointments: action.payload,
+        status: action.payload.status,
       };
     case DELETE_APPOINTMENT:
       return {
         ...state,
         appointments: state.appointments.filter((appointment) => appointment.id !== action.payload),
+        status: '',
       };
     default:
       return state;

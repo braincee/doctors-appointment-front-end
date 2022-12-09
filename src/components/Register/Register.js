@@ -1,17 +1,16 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { userRegister } from '../../redux/user/register';
+import { userRegister } from '../../redux/user/login';
 import './register.css';
 
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [errors, setErrors] = useState('');
-  const [success, setSuccess] = useState('');
+  const [error, setErrors] = useState('');
 
-  const newState = useSelector((state) => state.registerSessionsReducer);
+  const newState = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -32,25 +31,29 @@ const Register = () => {
     }
   };
 
+  useEffect(() => {
+    if (newState.status === 200) {
+      navigate('/doctors');
+    } else if (newState.status !== 200 && newState.status !== '') {
+      if (newState.fetchedData.error === 422) {
+        setErrors(newState.fetchedData.errors);
+      } else {
+        setErrors(newState.fetchedData.errors);
+      }
+    }// eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [newState]);
+
   const handleSubmit = (e) => {
     const form = e.target;
     e.preventDefault();
-    form.reset();
     dispatch(userRegister(name, email));
-
-    if (newState.status === 200) {
-      setSuccess(newState.fetchedData.message);
-      navigate('/login');
-    } else {
-      setErrors(newState.fetchedData.error);
-    }
+    form.reset();
   };
 
   return (
     <section className="register-section">
       <div className="register-container">
-        <p>{success}</p>
-        <p>{errors}</p>
+        <p>{error}</p>
         <h2 className="register-title">Sign Up</h2>
         <form onSubmit={handleSubmit} className="register-form">
           <input

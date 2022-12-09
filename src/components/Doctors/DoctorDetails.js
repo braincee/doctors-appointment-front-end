@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { getDoctorsAction } from '../../redux/doctorReduce/doctors';
 
 const DoctorDetails = () => {
-  const doctors = useSelector((state) => state.doctor);
+  const doctors = useSelector((state) => state.doctors);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -14,7 +14,7 @@ const DoctorDetails = () => {
   const params = useParams();
   const doctor = doctors.find((doctor) => doctor.id === Number(params.id));
   const {
-    name, speciality, email, image, description, bill,
+    name, speciality, email, image, description, fee,
   } = doctor;
 
   return (
@@ -35,8 +35,8 @@ const DoctorDetails = () => {
             <td>{email}</td>
           </tr>
           <tr className="col">
-            <th>Bill</th>
-            <td>{bill}</td>
+            <th>Fee</th>
+            <td>{fee}</td>
           </tr>
         </table>
         <Link to="/new_appointment" className="btn-details btn mt-4 text-center">Book Appointment</Link>

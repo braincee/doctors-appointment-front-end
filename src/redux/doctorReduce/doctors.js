@@ -1,6 +1,6 @@
 import { NotificationManager } from 'react-notifications';
 import axios from '../../config/axios';
-// const BASE_URL = 'http://localhost:3000/api/v1/doctors;
+
 const GET_DOCTORS = 'DOCTOR_APPOINTMENT/GET_DOCTORS';
 const CREATE_DOCTOR = 'DOCTOR_APPOINTMENT/CREATE_DOCTOR';
 const DELETE_DOCTOR = 'DOCTOR_APPOINTMENT/DELETE_DOCTOR';
@@ -17,14 +17,14 @@ const createDoctor = (payload) => ({
   payload,
 });
 
-const deleteDoctor = (payload) => ({
+const deleteDoctor = (id) => ({
   type: DELETE_DOCTOR,
-  payload,
+  id,
 });
 
 export const getDoctorsAction = () => async (dispatch) => {
   axios
-    .get('api/v1/doctors')
+    .get('http://localhost:3001/api/v1/doctors')
     .then((res) => {
       dispatch(getDoctors(res.data));
     })
@@ -33,15 +33,15 @@ export const getDoctorsAction = () => async (dispatch) => {
     });
 };
 
-export const createDoctorAction = (payload) => async (dispatch) => {
+export const createDoctorAction = (doctor, userId) => async (dispatch) => {
   axios
-    .post('api/v1/doctors', payload)
+    .post(`http://localhost:3001/api/v1/doctors?user_id=${userId}`, doctor)
     .then((res) => {
       dispatch(createDoctor(res.data));
       NotificationManager.success(
         'You have added a new Doctor!',
         'Successful!',
-        2000,
+        200,
       );
     })
     .catch((error) => {
@@ -53,11 +53,11 @@ export const createDoctorAction = (payload) => async (dispatch) => {
     });
 };
 
-export const deleteDoctorAction = (payload) => async (dispatch) => {
+export const deleteDoctorAction = (id) => async (dispatch) => {
   axios
-    .delete(`api/v1/doctors/${payload}`)
-    .then((res) => {
-      dispatch(deleteDoctor(res.data));
+    .delete(`http://localhost:3001/api/v1/doctors/${id}`)
+    .then(() => {
+      dispatch(deleteDoctor(id));
     });
 };
 

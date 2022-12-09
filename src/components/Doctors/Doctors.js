@@ -8,7 +8,7 @@ import 'react-multi-carousel/lib/styles.css';
 import { getDoctorsAction } from '../../redux/doctorReduce/doctors';
 
 const Doctors = () => {
-  const doctors = useSelector((state) => state.doctor);
+  const doctors = useSelector((state) => state.doctors);
   const dispatch = useDispatch();
   // const [doctors, setDoctors] = useState([]);
   useEffect(() => {
@@ -68,8 +68,8 @@ const Doctors = () => {
                           name={doctor.name}
                           image={doctor.image}
                           speciality={doctor.speciality}
-                          city={doctor.location}
-                          description={doctor.description}
+                          city={doctor.city}
+                          fee={doctor.fee}
                         />
                       </Link>
                     </div>

@@ -9,23 +9,13 @@ import {
 import './delete_doctor.css';
 
 const DeleteDoctor = () => {
-  const doctors = useSelector((state) => state.doctor);
+  const doctors = useSelector((state) => state.doctors);
   const [successNotice, setSuccessNotice] = useState(false);
-  // const navigate = useNavigate();
-  // const hasAccount = localStorages.getUser();
-  // const role = hasAccount.user === undefined ? '' : hasAccount.user.name;
-
-  // useEffect(() => {
-  //   if (role !== 'admin') {
-  //     navigate('/401');
-  //   }
-  // }, []);
 
   const dispatch = useDispatch();
   const deleteDoctor = (id) => {
     dispatch(deleteDoctorAction(id));
     setSuccessNotice(true);
-    window.location.reload();
   };
 
   useEffect(() => {
@@ -34,13 +24,13 @@ const DeleteDoctor = () => {
 
   return (
     <div className="delete-container">
-      {doctors.map((item) => (
-        <div key={item.id} className="delete-details">
-          <img src={item.image} alt="doctor" className="delete-image" />
-          <p className="delete-name">{item.name}</p>
+      {doctors.map((doctor) => (
+        <div key={doctor.id} className="delete-details">
+          <img src={doctor.image} alt="doctor" className="delete-image" />
+          <p className="delete-name">{doctor.name}</p>
           <button
             type="button"
-            onClick={() => deleteDoctor(item.id)}
+            onClick={() => deleteDoctor(doctor.id)}
             className="delete-button"
           >
             Delete

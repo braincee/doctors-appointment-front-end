@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { userLogin } from '../../redux/user/login';
@@ -8,12 +8,11 @@ import './login.css';
 const Login = () => {
   const [name, setName] = useState('');
   const [errors, setErrors] = useState('');
-  const [success, setSuccess] = useState('');
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const newState = useSelector((state) => state.loginSessionsReducer);
+  const newState = useSelector((state) => state.user);
 
   const handleChange = (e) => {
     const input = e.target;
@@ -28,19 +27,24 @@ const Login = () => {
     }
   };
 
+  useEffect(() => {
+    if (newState.status === 200) {
+      navigate('/doctors');
+    } else if (newState.status !== 200 && newState.status !== '') {
+      if (newState.fetchedData.error === 401) {
+        setErrors(newState.fetchedData.errors);
+      } else {
+        setErrors(newState.fetchedData.errors);
+      }
+    }// eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [newState]);
+
   const handleSubmit = (e) => {
     const form = e.target;
     e.preventDefault();
-    form.reset();
-
     dispatch(userLogin(name));
 
-    if (newState.status === 200) {
-      setSuccess(newState.fetchedData.message);
-      navigate('/doctors');
-    } else {
-      setErrors(newState.fetchedData.error);
-    }
+    form.reset();
   };
 
   return (
@@ -65,7 +69,6 @@ const Login = () => {
             </NavLink>
           </div>
           <>
-            <p>{success}</p>
             <p>{errors}</p>
           </>
         </form>

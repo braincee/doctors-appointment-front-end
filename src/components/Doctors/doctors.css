@@ -1,3 +1,7 @@
+.main-doctor-container {
+  max-width: 70%;
+}
+
 .doctors {
   display: flex;
   flex-direction: column;
@@ -84,11 +88,6 @@
   justify-self: end;
 }
 
-.main-doctor-container {
-  padding-top: 65px;
-  width: 100%;
-}
-
 .image-div {
   width: 10rem;
   height: 10rem;
@@ -140,11 +139,17 @@
   display: block;
 }
 
-@media (max-width: 800px) {
+@media (min-width: 767px) {
   .doctor-container {
-    justify-content: space-between;
+    position: relative;
     flex-direction: column;
     padding: 1rem 2rem 1rem 2rem;
+    left: 120px;
+  }
+
+  .main-doctor-container {
+    position: relative;
+    left: 300px;
   }
 
   .single-image {
