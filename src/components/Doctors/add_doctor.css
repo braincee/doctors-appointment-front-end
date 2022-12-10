@@ -12,8 +12,10 @@
   background-color: rgba(85, 85, 85, 0.082);
   -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(1px);
-  padding: 80px;
+  padding: 30px;
   border-radius: 10px;
+  position: relative;
+  left: 170px;
 }
 
 .doctor-title {
@@ -44,9 +46,24 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
-@media only screen and (min-width: 767px) {
+@media only screen and (max-width: 820px) {
   .doctor-container {
     position: relative;
-    left: 100px;
+    left: 140px;
+    margin-top: -400px;
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(1px);
+  }
+
+  .doctor-title {
+    position: relative;
+    left: -200px;
+  }
+
+  .doctor-form {
+    position: relative;
+    left: -200px;
+    display: flex;
+    flex-direction: column;
   }
 }

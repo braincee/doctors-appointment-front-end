@@ -11,7 +11,7 @@ const AddDoctor = () => {
 
   const [image, setImage] = useState('');
 
-  const user = useSelector((state) => state.user.fetchedData);
+  const user = useSelector((state) => state.user.fetchedData.data);
 
   const dispatch = useDispatch();
 

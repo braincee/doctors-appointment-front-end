@@ -43,16 +43,16 @@ const Doctors = () => {
       {
         doctors.length === 0
           ? (
-            <div className="doctors">
-              <h1 className="doctor-header">AVAILABLE DOCTORS</h1>
+            <div className="header">
+              <h1>AVAILABLE DOCTORS</h1>
               <h2 className="not-found-notice mt-5">No doctors available</h2>
             </div>
           )
 
           : (
             <>
-              <div className="doctors">
-                <h1 className="doctor-header">AVAILABLE DOCTORS</h1>
+              <div className="header">
+                <h1>AVAILABLE DOCTORS</h1>
                 <p className="doctor-header-para"> Please select a doctor</p>
               </div>
               <div className="doctors-li">
@@ -65,7 +65,6 @@ const Doctors = () => {
                     <div key={doctor.id}>
                       <Link to={`/doctor_details/${doctor.id}`}>
                         <SingleDoctor
-                          key={doctor.id}
                           name={doctor.name}
                           image={doctor.image}
                           speciality={doctor.speciality}
