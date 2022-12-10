@@ -10,7 +10,7 @@ const BookAppointment = () => {
   const [doctorId, setId] = useState('');
 
   const doctors = useSelector((state) => state.doctors);
-  const user = useSelector((state) => state.user.fetchedData);
+  const user = useSelector((state) => state.user.fetchedData.data);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 

@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
 import { getDoctorsAction } from '../../redux/doctorsReducer/doctors';
+import baseUrl from '../helpers/configData';
+import './detail.css';
 
 const DoctorDetails = () => {
   const doctors = useSelector((state) => state.doctors);
@@ -18,23 +20,23 @@ const DoctorDetails = () => {
   } = doctor;
 
   return (
-    <div id="RouterNavLink" className="doctor-container">
+    <div id="RouterNavLink" className="details-container">
       <div className="image-container">
-        <img src={image} alt="Profile of doctor" className="single-image" />
+        <img src={`${baseUrl}${image}`} alt="Profile of doctor" className="single-image" />
       </div>
-      <div className="details">
-        <h4 className="detail-name">{name}</h4>
-        <table>
-          <tr className="col">
-            <th>Speciality</th>
-            <td>{speciality}</td>
+      <div className="details my-4">
+        <h4 className="me-5 fs-7">{name}</h4>
+        <table className="mr-5">
+          <tr>
+            <th>Speciality:</th>
+            <td className="py-2 me-5 fs-5">{speciality}</td>
           </tr>
-          <tr className="col">
-            <th>Fee</th>
+          <tr>
+            <th>Fee:</th>
             <td>{fee}</td>
           </tr>
         </table>
-        <Link to="/new_appointment" className="btn-details btn mt-4 text-center">Book Appointment</Link>
+        <Link to="/new_appointment" className="btn btn-secondary mt-4 text-center">Book Appointment</Link>
       </div>
     </div>
   );

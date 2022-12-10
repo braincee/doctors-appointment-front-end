@@ -5,7 +5,7 @@ import './appointment.css';
 
 const MyAppointments = () => {
   const dispatch = useDispatch();
-  const user = useSelector((state) => state.user.fetchedData);
+  const user = useSelector((state) => state.user.fetchedData.data);
   const doctors = useSelector((state) => state.doctors);
   const appointments = useSelector((state) => state.appointment.appointments);
 
@@ -18,8 +18,9 @@ const MyAppointments = () => {
   };
 
   return (
-    <section className="appointment-container">
-      {
+    <div className="appoint">
+      <section className="appointment-container">
+        {
       appointments.length === 0 ? (
         <div className="notice-container">
           <h2 className="title">MY APPOINTMENTS</h2>
@@ -50,7 +51,8 @@ const MyAppointments = () => {
         </>
       )
     }
-    </section>
+      </section>
+    </div>
   );
 };
 
