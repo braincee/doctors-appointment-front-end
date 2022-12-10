@@ -14,7 +14,7 @@ const DoctorDetails = () => {
   const params = useParams();
   const doctor = doctors.find((doctor) => doctor.id === Number(params.id));
   const {
-    name, speciality, email, image, description, fee,
+    name, speciality, image, fee,
   } = doctor;
 
   return (
@@ -24,15 +24,10 @@ const DoctorDetails = () => {
       </div>
       <div className="details">
         <h4 className="detail-name">{name}</h4>
-        <p>{description}</p>
         <table>
           <tr className="col">
             <th>Speciality</th>
             <td>{speciality}</td>
-          </tr>
-          <tr>
-            <th>Email</th>
-            <td>{email}</td>
           </tr>
           <tr className="col">
             <th>Fee</th>
