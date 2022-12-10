@@ -7,7 +7,7 @@ Project requirements can be found [here](https://github.com/microverseinc/curric
 ## Kanban Board
 
 ## Kanban Board
-We are three members in team 
+We are two members in team 
  - [@braincee](https://github.com/braincee)
  - [@Bria22](https://github.com/Bria22)
 
