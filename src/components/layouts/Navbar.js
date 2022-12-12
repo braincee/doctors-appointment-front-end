@@ -4,6 +4,8 @@ import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { userLogOutAction } from '../../redux/user/login';
 import './main.css';
 import logo from '../../assets/doctor-logo.png';
+import { resetDoctorAction } from '../../redux/doctorsReducer/doctors';
+import { resetAppointmentAction } from '../../redux/appointments/actions/appointmentActions';
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -11,8 +13,11 @@ const Navbar = () => {
 
   const handleLogout = () => {
     dispatch(userLogOutAction());
+    dispatch(resetDoctorAction());
+    dispatch(resetAppointmentAction());
     navigate('/login');
   };
+
   return (
     <nav className="navbar">
       <div className="logo-container">

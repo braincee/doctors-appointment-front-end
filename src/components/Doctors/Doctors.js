@@ -13,7 +13,7 @@ const Doctors = () => {
   // const [doctors, setDoctors] = useState([]);
   useEffect(() => {
     dispatch(getDoctorsAction());
-  }, [dispatch]);
+  }, []);
 
   const responsive = {
     superLargeDesktop: {
@@ -44,16 +44,16 @@ const Doctors = () => {
         doctors.length === 0
           ? (
             <div className="header">
-              <h1>AVAILABLE DOCTORS</h1>
-              <h2 className="not-found-notice mt-5">No doctors available</h2>
+              <h1 className="header-1">AVAILABLE DOCTORS</h1>
+              <h2 className="header-2 mt-5">No doctors available</h2>
             </div>
           )
 
           : (
             <>
               <div className="header">
-                <h1>AVAILABLE DOCTORS</h1>
-                <p className="doctor-header-para"> Please select a doctor</p>
+                <h1 className="header-1">AVAILABLE DOCTORS</h1>
+                <p className="header-2"> Please select a doctor</p>
               </div>
               <div className="doctors-li">
                 <Carousel

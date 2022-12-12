@@ -7,7 +7,7 @@ Project requirements can be found [here](https://github.com/microverseinc/curric
 ## Kanban Board
 
 ## Kanban Board
-We are two members in team 
+We are two members in the team 
  - [@braincee](https://github.com/braincee)
  - [@Bria22](https://github.com/Bria22)
 
@@ -112,5 +112,10 @@ Give a ⭐️ if you like this project!
 - [FontAwesome](https://fontawesome.com/) and [Flaticon](https://www.flaticon.com/) for icons.
 - [Unsplash](https://unsplash.com/) for images.
 
-## 📝 License
-This project is MIT licensed.
+## 📝 License <a name="license"></a>
+
+This project is [MIT](./LICENSE) licensed.
+
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>

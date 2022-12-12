@@ -1,5 +1,7 @@
 import axios from 'axios';
-import { CREATE_APPOINTMENT, GET_APPOINTMENTS, DELETE_APPOINTMENT } from './types';
+import {
+  CREATE_APPOINTMENT, GET_APPOINTMENTS, DELETE_APPOINTMENT, RESET_APPOINTMENT,
+} from './types';
 
 const appointmentAction = (response) => ({
   type: CREATE_APPOINTMENT,
@@ -33,6 +35,10 @@ export const deleteAppointment = (id) => async (dispatch) => {
     });
   }
 };
+
+export const resetAppointmentAction = () => ({
+  type: RESET_APPOINTMENT,
+});
 
 const userAppointment = (appointment, userId, doctorId) => async (dispatch) => {
   const response = await createAppointment(appointment, userId, doctorId);

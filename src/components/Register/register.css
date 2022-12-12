@@ -50,3 +50,11 @@ form input {
     margin-top: -150px;
   }
 }
+
+@media only screen and (max-width: 540px) {
+  .register-section {
+    position: relative;
+    left: 2px;
+    top: 150px;
+  }
+}

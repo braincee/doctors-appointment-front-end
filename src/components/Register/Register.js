@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { userRegister } from '../../redux/user/login';
 import './register.css';
@@ -8,9 +8,6 @@ import './register.css';
 const Register = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [error, setErrors] = useState('');
-
-  const newState = useSelector((state) => state.user);
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -31,29 +28,17 @@ const Register = () => {
     }
   };
 
-  useEffect(() => {
-    if (newState.status === 200) {
-      navigate('/doctors');
-    } else if (newState.status !== 200 && newState.status !== '') {
-      if (newState.fetchedData.error === 422) {
-        setErrors(newState.fetchedData.errors);
-      } else {
-        setErrors(newState.fetchedData.errors);
-      }
-    }
-  }, [newState]);
-
   const handleSubmit = (e) => {
     const form = e.target;
     e.preventDefault();
     dispatch(userRegister(name, email));
+    navigate('/doctors');
     form.reset();
   };
 
   return (
     <section className="register-section">
       <div className="register-container">
-        <p>{error}</p>
         <h2 className="register-title">Sign Up</h2>
         <form onSubmit={handleSubmit} className="register-form">
           <input

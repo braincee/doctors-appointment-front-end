@@ -73,7 +73,7 @@
   width: 22rem;
 }
 
-.doctor-header-para {
+.header-2 {
   font-size: 1.125rem !important;
   line-height: 1.75rem !important;
   color: rgb(107 114 128/var(--tw-text-opacity)) !important;
@@ -148,5 +148,18 @@
     position: relative;
     margin: 50%;
     left: -10px;
+  }
+}
+
+@media only screen and (max-width: 540px) {
+  .header {
+    margin: 80px 80px 0 70px;
+    color: black;
+  }
+
+  .header-1 {
+    white-space: nowrap;
+    font-size: 18px;
+    display: inline-block;
   }
 }

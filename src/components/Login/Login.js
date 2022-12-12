@@ -1,18 +1,18 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState, useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
 import { userLogin } from '../../redux/user/login';
 import './login.css';
 
 const Login = () => {
   const [name, setName] = useState('');
-  const [errors, setErrors] = useState('');
+  // const [errors, setErrors] = useState('');
 
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const newState = useSelector((state) => state.user);
+  // const newState = useSelector((state) => state.user);
 
   const handleChange = (e) => {
     const input = e.target;
@@ -27,23 +27,23 @@ const Login = () => {
     }
   };
 
-  useEffect(() => {
-    if (newState && newState.status === 200) {
-      navigate('/doctors');
-    } else if (newState && newState.status !== 200 && newState.status !== '') {
-      if (newState.fetchedData && newState.fetchedData.error === 401) {
-        setErrors(newState.fetchedData.errors);
-      } else {
-        setErrors(newState.fetchedData ? newState.fetchedData.errors : '');
-      }
-    }
-  }, [newState]);
+  // useEffect(() => {
+  //   if (newState && newState.status === 200) {
+  //     navigate('/doctors');
+  //   } else if (newState && newState.status !== 200 && newState.status !== '') {
+  //     if (newState.fetchedData && newState.fetchedData.error === 401) {
+  //       setErrors(newState.fetchedData.errors);
+  //     } else {
+  //       setErrors(newState.fetchedData ? newState.fetchedData.errors : '');
+  //     }
+  //   }
+  // }, [newState]);
 
   const handleSubmit = (e) => {
     const form = e.target;
     e.preventDefault();
     dispatch(userLogin(name));
-
+    navigate('/doctors');
     form.reset();
   };
 
@@ -68,9 +68,6 @@ const Login = () => {
               <button type="button" className="button1 btn btn-secondary me-4 fs-4">Sign Up</button>
             </NavLink>
           </div>
-          <>
-            <p>{errors}</p>
-          </>
         </form>
       </div>
     </section>

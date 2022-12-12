@@ -4,6 +4,7 @@ import axios from 'axios';
 const GET_DOCTORS = 'DOCTOR_APPOINTMENT/GET_DOCTORS';
 const CREATE_DOCTOR = 'DOCTOR_APPOINTMENT/CREATE_DOCTOR';
 const DELETE_DOCTOR = 'DOCTOR_APPOINTMENT/DELETE_DOCTOR';
+const RESET_DOCTOR = 'DOCTOR_APPOINTMENT/RESET_DOCTOR';
 
 const doctorsState = [];
 
@@ -20,6 +21,10 @@ const createDoctor = (payload) => ({
 const deleteDoctor = (id) => ({
   type: DELETE_DOCTOR,
   id,
+});
+
+export const resetDoctorAction = () => ({
+  type: RESET_DOCTOR,
 });
 
 export const getDoctorsAction = () => async (dispatch) => {
@@ -69,6 +74,8 @@ const doctorsReducer = (state = doctorsState, action) => {
       return [...state, action.payload];
     case DELETE_DOCTOR:
       return state.filter((doctor) => doctor.id !== action.id);
+    case RESET_DOCTOR:
+      return doctorsState;
     default:
       return state;
   }

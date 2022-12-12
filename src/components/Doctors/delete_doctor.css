@@ -1,7 +1,7 @@
 .delete-container {
   width: 80%;
-  display: grid;
-  grid-template-columns: auto auto auto;
+  left: 150px;
+  display: flex;
   justify-content: space-evenly;
   gap: 1px;
   margin-top: 50px;
