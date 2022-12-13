@@ -69,7 +69,7 @@ const Navbar = () => {
               Delete a Doctor
             </NavLink>
           </li>
-          <button type="button" onClick={handleLogout} className="bg-secondary btn-sm">Logout</button>
+          <button type="button" onClick={handleLogout} className="btn btn-danger btn-sm">Logout</button>
         </ul>
       </div>
       <p className="copyright">&copy; Microverse 2022</p>
